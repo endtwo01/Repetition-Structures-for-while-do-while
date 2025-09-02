@@ -15,6 +15,30 @@ English: For a class of 45 students, build an algorithm to determine:
 
 int main()
 {
+    int i, age, agelow = 0, quantAgeLow = 0, quantHeightLarger20 = 0;
+    float ageMedia, heightMedia, height, heightLarger20 = 0;
 
+    for(i = 1; i <= 4; i++)
+    {
+        printf("Enter your age and height in meters: ");
+        scanf("%d%f", &age, &height);
+
+        if(height < 1.7)
+        {
+            agelow += age;
+            quantAgeLow++;
+        }
+
+        if(age > 20)
+        {
+            heightLarger20 += height;
+            quantHeightLarger20++;
+        }
+    }
+
+    ageMedia = (float)agelow / quantAgeLow;
+    heightMedia = heightLarger20 / quantHeightLarger20;
+    printf("average age of students under 1.70m tall: %.2f\n", ageMedia);
+    printf("average height of students under 1.70m tall: %.2f\n", heightMedia);
     return 0;
 }
